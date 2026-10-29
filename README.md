@@ -1,10 +1,40 @@
 # Certificate Multitool – Custom Field
 
+Certificate Multitool combines two Moodle plugins: course editors maintain certificate wording in course settings, and certificate designers control its layout in a shared Certificate manager template. Install the two plugins together for this workflow.
+
+| Part | Role |
+| --- | --- |
+| [Custom Field](https://github.com/108design/moodle-customfield_multiline) | Stores course text, text mode and alignment choices. |
+| [Cert. Element](https://github.com/108design/moodle-certificateelement_coursefieldtext) | Places those course values on the certificate template and supplies the course HTML preview. |
+
+This repository contains the **Custom Field** part of the pair.
+
+## Guides for both plugins
+
+Start with the guide for your role. The same neutral, screenshot-free guides are included in both repositories.
+
+| Guide | Read online | Download |
+| --- | --- | --- |
+| Course editors: enter text, choose formatting and check the course preview | [Course editor guide](docs/COURSE_EDITOR_GUIDE.md) | [PDF](docs/COURSE_EDITOR_GUIDE.pdf) |
+| Administrators and certificate designers: install the pair, create fields and configure templates | [Administrator guide](docs/ADMINISTRATOR_GUIDE.md) | [PDF](docs/ADMINISTRATOR_GUIDE.pdf) |
+
+[Documentation index](docs/README.md)
+
+## Set up the pair
+
+1. Install **Certificate Multitool - Custom Field** in `customfield/field/multiline`.
+2. Install a compatible **Certificate manager** (`tool_certificate`) and **Certificate Multitool - Cert. Element** in `admin/tool/certificate/element/coursefieldtext`. Complete Moodle's plugin upgrade.
+3. Create the course fields, add the matching elements to a certificate template, and select that template in a **Course certificate** (`mod_coursecertificate`) activity. The administrator guide covers the full setup.
+
+These paths are relative to Moodle's web/plugin root, inside `public/` on installations with a split web directory. Check the Certificate manager requirements in the administrator guide for your Moodle branch.
+
+## Course field behaviour
+
 Store several lines of plain text in a single Moodle course custom field. Enter inserts a hard line break; blank lines and literal special characters are retained. There is no rich-text editor.
 
 This GPL beta targets Moodle 4.5 through 5.3. Install this plugin in `customfield/field/multiline` and complete Moodle's upgrade. Add a **Certificate Multitool – Custom Field** field under **Site administration → Courses → Course custom fields**, then fill it in through course settings. Native required, unique, locked and visibility settings apply. A saved empty value suppresses the default. Native course backup/restore preserves the value, text mode and alignment.
 
-Use the separate **Certificate Multitool – Cert. Element** certificate element to control font, size, colour, width, position and left/centre/right alignment and line height in Certificate manager. This field does not require Certificate manager. Plain text is the default and displays HTML tags literally. Course settings offer **Text mode → Limited HTML** for each course value, entered as source without an editor. Allowed tags are `strong`, `b`, `em`, `i`, `u`, `small`, `ul`, `ol`, `li`, `br` and `p`. All attributes, CSS and media are removed; executable content is discarded. Use HTML `br` or `p` for breaks in this mode. Long lines can wrap within the certificate element width.
+Use the companion [**Certificate Multitool - Cert. Element**](https://github.com/108design/moodle-certificateelement_coursefieldtext) to control font, size, colour, width, position and left/centre/right alignment and line height in Certificate manager. Plain text is the default and displays HTML tags literally. Course settings offer **Text mode → Limited HTML** for each course value, entered as source without an editor. Allowed tags are `strong`, `b`, `em`, `i`, `u`, `small`, `ul`, `ol`, `li`, `br` and `p`. All attributes, CSS and media are removed; executable content is discarded. Use HTML `br` or `p` for breaks in this mode. Long lines can wrap within the certificate element width.
 
 Changing Text mode keeps the raw source. New certificate issues save the selected mode with the content; existing issues keep their saved mode.
 
@@ -24,11 +54,6 @@ In course settings, choose **Limited HTML** and save text such as `<small>Advanc
 
 Existing saved Plain text and Limited HTML values keep their interpretation on upgrade, including old HTML that happened to contain small tags. Save a course value again explicitly in Limited HTML mode to enable small. Partial updates without a submitted text mode preserve the previous interpretation. New issues retain the selected HTML semantics; existing issues retain their saved interpretation. The percentage is a template layout setting used again when a PDF is regenerated.
 
-
-## Guides
-
-- [Course editor guide](docs/COURSE_EDITOR_GUIDE.md) ([PDF](docs/COURSE_EDITOR_GUIDE.pdf))
-- [Administrator guide](docs/ADMINISTRATOR_GUIDE.md) ([PDF](docs/ADMINISTRATOR_GUIDE.pdf))
 
 ## Licence
 
