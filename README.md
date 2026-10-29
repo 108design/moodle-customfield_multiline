@@ -85,6 +85,6 @@ Existing saved Plain text and Limited HTML values keep their interpretation on u
 
 ## Licence
 
-GNU GPL v3 or later. See [LICENSE.md](LICENSE.md). No product activation is required.
+GNU GPL v3 or later. See [LICENSE.md](LICENSE.md).
 
 Available free of charge under the terms of the applicable license.
