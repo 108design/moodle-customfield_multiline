@@ -1,6 +1,13 @@
 # Certificate Multitool – Custom Field
 
 The text workflow in Certificate Multitool combines two Moodle plugins: course editors maintain certificate wording in course settings, and certificate designers control its layout in a shared Certificate manager template. Install the two plugins together for this workflow.
+<details>
+<summary>Screenshots</summary>
+
+<table><tr><td><a href="https://raw.githubusercontent.com/108design/moodle-customfield_multiline/main/docs/screenshots/shared-text-template.jpg"><img src="https://raw.githubusercontent.com/108design/moodle-customfield_multiline/main/docs/screenshots/shared-text-template.jpg" alt="Course text placed in a shared certificate template" width="420"></a><br>Course text placed in a shared certificate template</td><td><a href="https://raw.githubusercontent.com/108design/moodle-customfield_multiline/main/docs/screenshots/course-preview.jpg"><img src="https://raw.githubusercontent.com/108design/moodle-customfield_multiline/main/docs/screenshots/course-preview.jpg" alt="Course certificate HTML preview" width="420"></a><br>Course certificate HTML preview</td></tr></table>
+
+</details>
+
 
 | Part | Role |
 | --- | --- |
@@ -8,6 +15,26 @@ The text workflow in Certificate Multitool combines two Moodle plugins: course e
 | [Cert. Element](https://github.com/108design/moodle-certificateelement_coursefieldtext) | Places those course values on the certificate template and supplies the course HTML preview. |
 
 This repository contains the **Custom Field** part of the pair.
+
+
+## Certificate Multitool set
+
+Use the text pair for course-managed wording and the image pair for course-specific pictures in a shared certificate template. Flexible Date supplies the date formatting. Choose the parts your workflow needs.
+
+| Plugin | Role and companion |
+| --- | --- |
+| [Certificate Multitool – Custom Field](https://github.com/108design/moodle-customfield_multiline) | Stores course text, text mode and alignment. Pair it with Cert. Element for certificate output. |
+| [Certificate Multitool – Cert. Element](https://github.com/108design/moodle-certificateelement_coursefieldtext) | Renders that course text and supplies the course HTML preview. Requires Custom Field and Certificate manager. |
+| [Course image](https://github.com/108design/moodle-customfield_courseimage) | Provides a single-image course field. Pair it with Course field image for certificate output. |
+| [Course field image](https://github.com/108design/moodle-certificateelement_coursefieldimg) | Places a course image on the certificate and preserves the issued image copy. Requires Certificate manager; it accepts Course image or a native textarea field with an internal image. |
+| [Flexible Date](https://github.com/108design/moodle-certificateelement_flexdate) | Formats certificate issue and expiry dates. Requires Certificate manager. |
+
+**Text pair:** install Custom Field and Cert. Element together for the course-text certificate workflow. **Image pair:** install Course image and Course field image together for the single-image upload workflow. The image element can also use a native textarea image without Course image. Course certificate is needed for course-based issuance and the text pair’s course HTML preview.
+
+### Moodle 5.3 qualification
+
+Moodle 5.3 integration is provisional: it has been tested with Certificate manager (tool_certificate) 5.0.10/5.0.11 outside those versions’ declared Moodle 5.0–5.2 support range. Check the compatibility of Certificate manager and, when used, Course certificate before deploying on Moodle 5.3. The course custom fields themselves do not require Certificate manager.
+
 
 ## Guides for both plugins
 
@@ -20,19 +47,6 @@ Start with the guide for your role. The same neutral, screenshot-free guides are
 
 [Documentation index](docs/README.md)
 
-## Optional image and date tools
-
-The Certificate Multitool family also includes course images and flexible dates. Add the parts your template needs:
-
-| Plugin | Use |
-| --- | --- |
-| [Course image](https://github.com/108design/moodle-customfield_courseimage) | Upload one PNG, JPEG or GIF in a course custom field, for example a signature. |
-| [Course field image](https://github.com/108design/moodle-certificateelement_coursefieldimg) | Place the selected course image on a certificate. It also accepts the first internally stored image in a native textarea course field. |
-| [Flexible Date](https://github.com/108design/moodle-certificateelement_flexdate) | Format dates in the certificate template. |
-
-For a course-specific image, use Course image together with Course field image. The image element saves an image copy with the issued certificate, so a later course-image change does not replace it when that certificate is regenerated. The standard Image element uses a template or shared image; it does not select an image from the current course automatically.
-
-These additions are optional. The course editor and administrator guides above cover the text pair; the linked image and date repositories document their own setup.
 
 ## Set up the pair
 
@@ -46,7 +60,7 @@ These paths are relative to Moodle's web/plugin root, inside `public/` on instal
 
 Store several lines of plain text in a single Moodle course custom field. Enter inserts a hard line break; blank lines and literal special characters are retained. There is no rich-text editor.
 
-This GPL beta targets Moodle 4.5 through 5.3. Install this plugin in `customfield/field/multiline` and complete Moodle's upgrade. Add a **Certificate Multitool – Custom Field** field under **Site administration → Courses → Course custom fields**, then fill it in through course settings. Native required, unique, locked and visibility settings apply. A saved empty value suppresses the default. Native course backup/restore preserves the value, text mode and alignment.
+This GPL release targets Moodle 4.5 through 5.3. Install this plugin in `customfield/field/multiline` and complete Moodle's upgrade. Add a **Certificate Multitool – Custom Field** field under **Site administration → Courses → Course custom fields**, then fill it in through course settings. Native required, unique, locked and visibility settings apply. A saved empty value suppresses the default. Native course backup/restore preserves the value, text mode and alignment.
 
 Use the companion [**Certificate Multitool - Cert. Element**](https://github.com/108design/moodle-certificateelement_coursefieldtext) to control font, size, colour, width, position and left/centre/right alignment and line height in Certificate manager. Plain text is the default and displays HTML tags literally. Course settings offer **Text mode → Limited HTML** for each course value, entered as source without an editor. Allowed tags are `strong`, `b`, `em`, `i`, `u`, `small`, `ul`, `ol`, `li`, `br` and `p`. All attributes, CSS and media are removed; executable content is discarded. Use HTML `br` or `p` for breaks in this mode. Long lines can wrap within the certificate element width.
 
@@ -72,3 +86,5 @@ Existing saved Plain text and Limited HTML values keep their interpretation on u
 ## Licence
 
 GNU GPL v3 or later. See [LICENSE.md](LICENSE.md). No product activation is required.
+
+Available free of charge under the terms of the applicable license.
