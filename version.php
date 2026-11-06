@@ -24,9 +24,9 @@
  */
 defined('MOODLE_INTERNAL') || die();
 $plugin->component = 'customfield_multiline';
-$plugin->version = 2026103000;
+$plugin->version = 2026110600;
 $plugin->requires = 2024100700;
 $plugin->supported = [405, 503];
 $plugin->incompatible = 504;
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release = '1.0.1';
+$plugin->release = '1.1.0';
