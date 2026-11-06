@@ -1,0 +1,17 @@
+name: Certificate Multitool – Custom Field
+summary: 108design's free GPL course custom field stores multiline certificate wording, text mode and
+  alignment for the companion certificate element.
+category: Course custom fields
+description: |
+  Store several lines of course-managed text in a Moodle course custom field. Plain text preserves literal characters, hard line breaks and blank lines. Native required, unique, locked and visibility settings apply; a saved empty value suppresses the default. Course backup and restore preserve the value and its presentation choices.
+
+  Each course value can use Plain text or Limited HTML. Limited HTML permits a bounded set of formatting and list tags while removing attributes, CSS and media. Horizontal and vertical alignment can inherit the template setting or use an explicit course choice.
+
+  For the Certificate Multitool text workflow, install the companion Cert. Element (certificateelement_coursefieldtext) and a compatible Certificate manager. The element supplies PDF rendering and the course HTML preview, while this plugin stores the course content. Certificate layout and font settings remain in the template. The course issuance workflow uses Course certificate.
+
+  The field itself is a Moodle custom field and does not require Certificate manager for standalone use. Check the declared compatibility of companion and parent plugins before deploying the complete certificate workflow. Maintained by 108design and available free of charge under the GNU GPL v3 or later.
+labels:
+- fully-free
+links:
+  docs: https://github.com/108design/moodle-customfield_multiline/blob/main/README.md
+  issues: https://github.com/108design/moodle-customfield_multiline/issues
