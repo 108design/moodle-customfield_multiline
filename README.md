@@ -1,4 +1,8 @@
-# Certificate Multitool – Custom Field
+<p align="center">
+  <img src="https://raw.githubusercontent.com/108design/moodle-customfield_multiline/main/docs/branding/marketplace-logo.png" alt="Certificate Multitool – Course Field: Multiline Text logo" width="125" height="125">
+</p>
+
+# Certificate Multitool – Course Field: Multiline Text
 
 The text workflow in Certificate Multitool combines two Moodle plugins: course editors maintain certificate wording in course settings, and certificate designers control its layout in a shared Certificate manager template. Install the two plugins together for this workflow.
 <details>
@@ -11,8 +15,8 @@ The text workflow in Certificate Multitool combines two Moodle plugins: course e
 
 | Part | Role |
 | --- | --- |
-| [Custom Field](https://github.com/108design/moodle-customfield_multiline) | Stores course text, text mode and alignment choices. |
-| [Cert. Element](https://github.com/108design/moodle-certificateelement_coursefieldtext) | Places those course values on the certificate template and supplies the course HTML preview. |
+| [Certificate Multitool – Course Field: Multiline Text](https://github.com/108design/moodle-customfield_multiline) | Stores course text, text mode and alignment choices. |
+| [Certificate Multitool – Cert. Element: Multiline Text](https://github.com/108design/moodle-certificateelement_coursefieldtext) | Places those course values on the certificate template and supplies the course HTML preview. |
 
 This repository contains the **Custom Field** part of the pair.
 
@@ -23,11 +27,11 @@ Use the text pair for course-managed wording and the image pair for course-speci
 
 | Plugin | Role and companion |
 | --- | --- |
-| [Certificate Multitool – Custom Field](https://github.com/108design/moodle-customfield_multiline) | Stores course text, text mode and alignment. Pair it with Cert. Element for certificate output. |
-| [Certificate Multitool – Cert. Element](https://github.com/108design/moodle-certificateelement_coursefieldtext) | Renders that course text and supplies the course HTML preview. Requires Custom Field and Certificate manager. |
-| [Course image](https://github.com/108design/moodle-customfield_courseimage) | Provides a single-image course field. Pair it with Course field image for certificate output. |
-| [Course field image](https://github.com/108design/moodle-certificateelement_coursefieldimg) | Places a course image on the certificate and preserves the issued image copy. Requires Certificate manager; it accepts Course image or a native textarea field with an internal image. |
-| [Flexible Date](https://github.com/108design/moodle-certificateelement_flexdate) | Formats certificate issue and expiry dates. Requires Certificate manager. |
+| [Certificate Multitool – Course Field: Multiline Text](https://github.com/108design/moodle-customfield_multiline) | Stores course text, text mode and alignment. Pair it with Cert. Element for certificate output. |
+| [Certificate Multitool – Cert. Element: Multiline Text](https://github.com/108design/moodle-certificateelement_coursefieldtext) | Renders that course text and supplies the course HTML preview. Requires Custom Field and Certificate manager. |
+| [Certificate Multitool – Course Field: Image](https://github.com/108design/moodle-customfield_courseimage) | Provides a single-image course field. Pair it with Course field image for certificate output. |
+| [Certificate Multitool – Cert. Element: Course Field Image](https://github.com/108design/moodle-certificateelement_coursefieldimg) | Places a course image on the certificate and preserves the issued image copy. Requires Certificate manager; it accepts Course image or a native textarea field with an internal image. |
+| [Certificate Multitool - Cert. Element: Flexible Date](https://github.com/108design/moodle-certificateelement_flexdate) | Formats certificate issue and expiry dates. Requires Certificate manager. |
 
 **Text pair:** install Custom Field and Cert. Element together for the course-text certificate workflow. **Image pair:** install Course image and Course field image together for the single-image upload workflow. The image element can also use a native textarea image without Course image. Course certificate is needed for course-based issuance and the text pair’s course HTML preview.
 
@@ -62,7 +66,7 @@ Store several lines of plain text in a single Moodle course custom field. Enter 
 
 This GPL release targets Moodle 4.5 through 5.3. Install this plugin in `customfield/field/multiline` and complete Moodle's upgrade. Add a **Certificate Multitool – Custom Field** field under **Site administration → Courses → Course custom fields**, then fill it in through course settings. Native required, unique, locked and visibility settings apply. A saved empty value suppresses the default. Native course backup/restore preserves the value, text mode and alignment.
 
-Use the companion [**Certificate Multitool - Cert. Element**](https://github.com/108design/moodle-certificateelement_coursefieldtext) to control font, size, colour, width, position and left/centre/right alignment and line height in Certificate manager. Plain text is the default and displays HTML tags literally. Course settings offer **Text mode → Limited HTML** for each course value, entered as source without an editor. Allowed tags are `strong`, `b`, `em`, `i`, `u`, `small`, `ul`, `ol`, `li`, `br` and `p`. All attributes, CSS and media are removed; executable content is discarded. Use HTML `br` or `p` for breaks in this mode. Long lines can wrap within the certificate element width.
+Use the companion [**Certificate Multitool – Cert. Element: Multiline Text**](https://github.com/108design/moodle-certificateelement_coursefieldtext) to control font, size, colour, width, position and left/centre/right alignment and line height in Certificate manager. Plain text is the default and displays HTML tags literally. Course settings offer **Text mode → Limited HTML** for each course value, entered as source without an editor. Allowed tags are `strong`, `b`, `em`, `i`, `u`, `small`, `ul`, `ol`, `li`, `br` and `p`. All attributes, CSS and media are removed; executable content is discarded. Use HTML `br` or `p` for breaks in this mode. Long lines can wrap within the certificate element width.
 
 Changing Text mode keeps the raw source. New certificate issues save the selected mode with the content; existing issues keep their saved mode.
 

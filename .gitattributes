@@ -57,3 +57,5 @@
 "/tests/text_test.php" -export-ignore -export-subst
 "/tests/value_format_test.php" -export-ignore -export-subst
 "/version.php" -export-ignore -export-subst
+"/docs/branding" export-ignore -export-subst
+"/docs/branding/marketplace-logo.png" export-ignore -export-subst
