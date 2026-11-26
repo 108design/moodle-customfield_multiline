@@ -92,3 +92,5 @@ Existing saved Plain text and Limited HTML values keep their interpretation on u
 GNU GPL v3 or later. See [LICENSE.md](LICENSE.md).
 
 Available free of charge under the terms of the applicable license.
+
+The 108design name and logo are subject to the [name and logo notice](TRADEMARKS.md).
