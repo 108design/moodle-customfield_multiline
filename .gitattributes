@@ -46,6 +46,8 @@
 "/lang" -export-ignore -export-subst
 "/lang/de" -export-ignore -export-subst
 "/lang/de/customfield_multiline.php" -export-ignore -export-subst
+"/lang/de_du" -export-ignore -export-subst
+"/lang/de_du/customfield_multiline.php" -export-ignore -export-subst
 "/lang/en" -export-ignore -export-subst
 "/lang/en/customfield_multiline.php" -export-ignore -export-subst
 "/lib.php" -export-ignore -export-subst
